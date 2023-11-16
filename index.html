@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div切换</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 600%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .div {
+            flex: 1;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        #div1 {
+            background-image: url('./images/image1.png');
+        }
+
+        #div2 {
+            background-image: url('./images/image2.png');
+        }
+
+        #div3 {
+            background-image: url('./images/image3.png');
+            position: relative;
+        }
+
+        #div4 {
+            background-image: url('./images/image4.png');
+        }
+
+        #div5 {
+            background-image: url('./images/image5.png');
+        }
+
+        #div6 {
+            background-image: url('./images/image6.png');
+        }
+
+        #recruitment-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            text-align: center;
+        }
+
+        .company-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+        }
+
+        .info-content {
+            width: 220px;
+            margin: 0 auto;
+        }
+
+        .custom-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="div1" class="div"></div>
+    <div id="div2" class="div">
+        <div class="company-info">
+            <h2>介绍</h2>
+            <div class="info-content">
+                "开创商业新征程，舒适办公，梦想起航！加入我们的办公室家族，共同打造一个充满创意和活力的工作空间。现诚邀各行业精英，共谱商业新篇章。优越的位置，便捷的交通，一流的设施，让您专注事业，成就梦想。选择我们，选择成功，让办公不再是单调的工作，而是充满激情的创业之旅！"
+            </div>
+        </div>
+    </div>
+    <div id="div3" class="div">
+        <div id="recruitment-info">
+            <h2>联系方式</h2>
+            <div class="info-content">
+                欢迎与我们联系！<br>地址：公司地址<br>电话：公司电话<br>Email：公司邮箱
+            </div>
+        </div>
+    </div>
+    <div id="div4" class="div"></div>
+    <div id="div5" class="div"></div>
+    <div id="div6" class="div"></div>
+</div>
+
+<!-- Replace the text button with an image -->
+<img src="./images/right.png" alt="Next" class="custom-button" onclick="nextDiv()" />
+
+<script>
+    let currentIndex = 0;
+
+    function nextDiv() {
+        currentIndex = (currentIndex + 1) % 6;
+        updateTransform();
+    }
+
+    function updateTransform() {
+        const container = document.querySelector('.container');
+        container.style.transform = `translateX(-${currentIndex * 100}vw)`;
+    }
+</script>
+
+</body>
+</html>
