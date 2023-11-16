@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Div切换</title>
     <style>
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             overflow: hidden;
@@ -88,49 +90,105 @@
             cursor: pointer;
             opacity: 0.9;
         }
+
+        .product-info {
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            /* background-color: rgba(0, 0, 0, 0.3); */
+        }
+
+        .service-info {
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .faq-info {
+            position: absolute;
+            top: 80px;
+            left: -20px;
+            width: 100%;
+            padding: 10px;
+            /* background-color: rgba(0, 0, 0, 0.2); */
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <div id="div1" class="div"></div>
-    <div id="div2" class="div">
-        <div class="company-info">
-            <h2>介绍</h2>
-            <div class="info-content">
-                "开创商业新征程，舒适办公，梦想起航！加入我们的办公室家族，共同打造一个充满创意和活力的工作空间。现诚邀各行业精英，共谱商业新篇章。优越的位置，便捷的交通，一流的设施，让您专注事业，成就梦想。选择我们，选择成功，让办公不再是单调的工作，而是充满激情的创业之旅！"
+    <div class="container">
+        <div id="div1" class="div"></div>
+        <div id="div2" class="div">
+            <div class="company-info">
+                <h2>公司介绍</h2>
+                <div class="info-content">
+                    "开创商业新征程，舒适办公，梦想起航！加入我们的办公室家族，共同打造一个充满创意和活力的工作空间。现诚邀各行业精英，共谱商业新篇章。优越的位置，便捷的交通，一流的设施，让您专注事业，成就梦想。选择我们，选择成功，让办公不再是单调的工作，而是充满激情的创业之旅！"
+                </div>
+            </div>
+        </div>
+        <div id="div3" class="div">
+            <div id="recruitment-info">
+                <h2>联系方式</h2>
+                <div class="info-content">
+                    欢迎与我们联系！<br>地址：公司地址<br>电话：公司电话<br>Email：公司邮箱
+                </div>
+            </div>
+        </div>
+        <div id="div4" class="div">
+            <div class="product-info">
+                <h2>我们的产品</h2>
+                <div class="info-content">
+                    先进设备： 我们配备最新的办公设备和技术，包括高速互联网、视频会议设备、打印机等，以确保您的工作高效顺畅。
+                    共享空间： 与其他创业者和企业家共享创意和资源，促进跨行业的合作与交流，为您的业务创造更多机会。
+                </div>
+            </div>
+        </div>
+        <div id="div5" class="div">
+            <div class="service-info">
+                <h2>我们的服务</h2>
+                <div class="info-content">
+                    高速互联网和IT支持： 提供可靠的高速互联网连接，并提供专业的IT支持，确保您的业务始终保持在线和运转良好。
+                    社区活动和网络： 组织各种社区活动，如研讨会、培训课程和社交聚会，帮助您扩展社交网络并获得更多商业机会。
+                    清洁和维护服务： 提供定期的清洁和维护服务，保持办公空间的整洁和良好状态。
+                </div>
+            </div>
+        </div>
+        <div id="div6" class="div">
+            <div class="faq-info">
+                <h2>常见问题</h2>
+                <div class="info-content">
+                    Q: 是否提供额外的办公设施和服务？<br><br>
+                    A: 我们提供先进的办公设备、会议室、前台服务等，以确保您在一个高效而便利的
+                </div>
             </div>
         </div>
     </div>
-    <div id="div3" class="div">
-        <div id="recruitment-info">
-            <h2>联系方式</h2>
-            <div class="info-content">
-                欢迎与我们联系！<br>地址：公司地址<br>电话：公司电话<br>Email：公司邮箱
-            </div>
-        </div>
-    </div>
-    <div id="div4" class="div"></div>
-    <div id="div5" class="div"></div>
-    <div id="div6" class="div"></div>
-</div>
 
-<!-- Replace the text button with an image -->
-<img src="./images/right.png" alt="Next" class="custom-button" onclick="nextDiv()" />
+    <!-- Replace the text button with an image -->
+    <img src="./images/right.png" alt="Next" class="custom-button" onclick="nextDiv()" />
 
-<script>
-    let currentIndex = 0;
+    <script>
+        let currentIndex = 0;
 
-    function nextDiv() {
-        currentIndex = (currentIndex + 1) % 6;
-        updateTransform();
-    }
+        function nextDiv() {
+            currentIndex = (currentIndex + 1) % 6;
+            updateTransform();
+        }
 
-    function updateTransform() {
-        const container = document.querySelector('.container');
-        container.style.transform = `translateX(-${currentIndex * 100}vw)`;
-    }
-</script>
+        function updateTransform() {
+            const container = document.querySelector('.container');
+            container.style.transform = `translateX(-${currentIndex * 100}vw)`;
+        }
+    </script>
 
 </body>
+
 </html>
